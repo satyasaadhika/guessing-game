@@ -4,9 +4,9 @@
 <h1> Welcome to my guessing game</h1>
 
 <?php
-$correctnumber=40; 
+$correctnumber=60; 
 
-if($_GET['guess'])
+if (isset($_GET['guess']) )
 {
   if (is_numeric($_GET['guess'])===FALSE)
  {
