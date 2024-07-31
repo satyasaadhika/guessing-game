@@ -4,7 +4,7 @@
 >install xamp on your system 
 
 #### you need to create tunel using NGROK
-##### for that install ngrok 
+#### for that install ngrok 
 - on your system 
 
 -  then type this command in cmd (change directory  where you have installed ngrok)
@@ -16,7 +16,7 @@
 
 - then concatenate this address before local host address ie. guess.php
 
-****************************************************************************
+- ****************************************************************************
 
 - changes in PHP file 
 
