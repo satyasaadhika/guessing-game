@@ -1,7 +1,8 @@
 body{
     text-align: center;
     margin: 20px;
-    background-color: rgb(154, 233, 233);
+    /* background-color: rgb(231, 232, 232); */
+    background-color: #f2f3f5;
 }
 
 .game-instruction{
