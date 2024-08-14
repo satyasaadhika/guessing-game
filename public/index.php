@@ -36,5 +36,23 @@
       }
     ?>
   </p>  
+  <div class="game-instruction">
+
+<h1 class="heading">Auto Grader Guessing Game instruction </h1> 
+<h3>How to use Guessing Game here is brief difinition</h3>
+
+  <div class="container">
+  <p><b>1.</b>Install xamp on your system <a href="https://www.apachefriends.org/" target="blank" >click here</a></p>
+  <p><b>2.</b>You need to create tunel using NGROK for that  <a href="https://ngrok.com/" target="_blank">install ngrok</a> on your system </p>
+  <p><b>3.</b>Then type this command in cmd (change directory  where you have installed ngrok) ngrok http 80</p>
+  <p><b>4.</b>Then after that copy that address who end with io </p>
+  <p><b>5.</b>Then concatenate this address before local host address ie. guess.php</p>
+  <p><b>6.</b>Changes in PHP file</p>
+  <p><b>7.</b>Change the correct number and replace with number specified by your autograder </p>
+  <p><b>8.</b>Which you can see when you open tool in autograder</p>
+  <p>$correctnumber=60;
+  </div>
+
+</div>
 </body>
 </html>
