@@ -1,58 +1,47 @@
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/style.css">
-  <title>Priyanshu Maurya 56d7e76b </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <!-- Priyanshu Maurya 56d7e76b -->
+    <title>Guessing Game</title>
 </head>
-
 <body>
-<h1> Welcome to my guessing game</h1>
- <p>
     <?php
-      if ( !isset($_GET['guess']) ) 
-      { 
-        echo("Missing guess parameter");
-      } 
-      else if ( strlen($_GET['guess']) < 1 ) 
-      {
-        echo("Your guess is too short");
-      } 
-      else if ( !is_numeric($_GET['guess']) ) 
-      {
-        echo("Your guess is not a number");
-      } 
-      else if ( $_GET['guess'] < 28 ) 
-      {
-        echo("Your guess is too low");
-      } 
-      else if ( $_GET['guess'] > 28 ) 
-      {
-        echo("Your guess is too high");
-      } 
-      else 
-      {
-        echo("Congratulations - You are right");
-      }
+        $correct_guess = 28;
+        $guess_class = "wrong";
+        $feedback = "";
+        if (!isset($_GET['guess'])) {
+            $feedback = "Missing guess parameter";
+        } else if (!is_numeric($_GET['guess'])) {
+            $feedback = "Your guess is not a number";
+        } else if ($_GET['guess'] < $correct_guess) {
+            $feedback = "Your guess is too low";
+        } else if ($_GET['guess'] > $correct_guess) {
+            $feedback = "Your guess is too high";
+        } else {
+            $feedback = "Congratulations - You are right";
+            $guess_class = "correct";
+            $guessed = true;
+        }
     ?>
-  </p>  
-  <div class="game-instruction">
+    <h1> Welcome to my guessing game</h1>
+    <p class="<?php echo $guess_class; ?>"><?php echo $feedback; ?></p>
+    <div class="game-instruction">
 
-<h1 class="heading">Auto Grader Guessing Game instruction </h1> 
-<h3>How to use Guessing Game here is brief difinition</h3>
+        <h1 class="heading">Auto Grader Guessing Game instruction </h1>
+        <h3>Instructions to play the Guessing Game</h3>
 
-  <div class="container">
-  <p><b>1.</b>Install xamp on your system <a href="https://www.apachefriends.org/" target="blank" >click here</a></p>
-  <p><b>2.</b>You need to create tunel using NGROK for that  <a href="https://ngrok.com/" target="_blank">install ngrok</a> on your system </p>
-  <p><b>3.</b>Then type this command in cmd (change directory  where you have installed ngrok) ngrok http 80</p>
-  <p><b>4.</b>Then after that copy that address who end with io </p>
-  <p><b>5.</b>Then concatenate this address before local host address ie. guess.php</p>
-  <p><b>6.</b>Changes in PHP file</p>
-  <p><b>7.</b>Change the correct number and replace with number specified by your autograder </p>
-  <p><b>8.</b>Which you can see when you open tool in autograder</p>
-  <p>$correctnumber=60;
-  </div>
-
-</div>
+        <div class="container">
+            <ol>
+                <li>Make sure the URL in the address bar has the query parameter <code>guess</code>. Alternatively, click <a href="/?guess=1">here</a>.</li>
+                <li>If it says "Your guess is too low" on the screen, update the your-guess-number in address URL with a larger number and enter</li>
+                <li>If it says "Your guess is too high" on the screen, update the your-guess-number in address URL with a larger number and enter</li>
+                <li>If it says "Missing guess parameter" on the screen, add a guess query parameter to the URL in address bar as in step 1</li>
+                <li>Repeat until you see the text "Congratulations - You are right". When you do, congratulations you have made the guess</li>
+            </ol>
+        </div>
+    </div>
 </body>
+
 </html>
